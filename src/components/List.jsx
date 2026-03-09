@@ -91,11 +91,11 @@ export default function List({list, setList, click}){
 
     let filteredList = list;
 
-    if(click === 'Active Tasks'){
+    if(click === 'Open'){
         filteredList = list.filter((task) => task.status === false);
     }
 
-    if(click === 'Completed Tasks'){
+    if(click === 'Complete'){
         filteredList = list.filter((task) => task.status === true)
     }
 

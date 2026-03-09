@@ -1,4 +1,4 @@
-const tabs = ['All Tasks','Active Tasks', 'Completed Tasks']
+const tabs = ["All", "Open", "Complete"]
 
 export default function AppHeader({list, click, setClick}){
     
@@ -7,8 +7,8 @@ export default function AppHeader({list, click, setClick}){
             <h1>Ingenious Tasks</h1>
             <div className="tabs">
                 {tabs.map((tab, index)=>{
-                  const numberOfTasks =  tab === 'All Tasks' ? list.length :
-                    tab === 'Active Tasks' ? list.filter(value => !value.status).length :
+                  const numberOfTasks =  tab === 'All' ? list.length :
+                    tab === 'Open' ? list.filter(value => !value.status).length :
                     list.filter(val => val.status).length
                     return(
                     <button 
