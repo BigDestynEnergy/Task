@@ -95,6 +95,8 @@ export default function ParentApp() {
                         background: '#111',
                         border: '1px solid #111',
                         borderRadius: '8px',
+                        justifyContent: 'center',
+                        alignItems: 'center',
                         padding: '8px',
                         boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
                         zIndex: 25,
