@@ -10,6 +10,7 @@ export default function List({list, setList, click}){
 
     function handleContextMenu(e, taskId){
         e.preventDefault();
+        e.stopPropagation()
 
         setMenu({
             visible: true,
@@ -124,7 +125,7 @@ export default function List({list, setList, click}){
                                 <div
                                     className="ham-menu"
                                     title="right click to open menu"
-                                    onDoubleClick={(e) => handleContextMenu(e, item.id)}
+                                    onClick={(e) => handleContextMenu(e, item.id)}
                                     >
                                     <div className="line"></div>
                                     <div className="line"></div>
