@@ -18,6 +18,13 @@
     .context-menu{
         margin-right: 0%;
     }
+
+    .open{
+    margin-bottom: 4px;
+    margin-left: 4px;
+    font-size: 10px;
+    width: fit-content;
+}
 }
 
 header{
