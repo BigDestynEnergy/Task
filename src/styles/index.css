@@ -78,7 +78,7 @@ header span{
     transition: all 0.3s ease;
     cursor: pointer;
     padding: 8px;
-    border: 1px solid #000;
+    border: 1px solid #caccca;
     border-radius: 4px;
     animation: slide 0.3s ease;
 }
