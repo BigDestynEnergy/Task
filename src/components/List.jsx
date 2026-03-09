@@ -124,8 +124,7 @@ export default function List({list, setList, click}){
                                    <span>{item.status ? "✅" : "❌"}</span>
                                 <div
                                     className="ham-menu"
-                                    title="right click to open menu"
-                                    onClick={(e) => handleContextMenu(e, item.id)}
+                                   onClick={(e) => handleContextMenu(e, item.id)}
                                     >
                                     <div className="line"></div>
                                     <div className="line"></div>

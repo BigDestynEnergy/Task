@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import List from './components/List'
 import Input from './components/Input'
 import OpenInput from './components/Open Input'
+import ParentApp from './components/parent'
 
 
 
@@ -14,14 +15,21 @@ export default function App(){
     return saved ? JSON.parse(saved) : []
   })
 
-  const [click, setClick] = useState('All Tasks')
+  const [click, setClick] = useState('All')
   const [todo, setTodo] = useState('')
   const [openInput, setOpenInput] = useState(false)
   useEffect(()=>{
     localStorage.setItem('list', JSON.stringify(list));
   }, [list])
+
+  const [openParent, setOPenParent] = useState(false)
   return(
     <div className="app">
+
+      <ParentApp
+      openParent={openParent}
+      setOPenParent={setOPenParent}
+      />
       <AppHeader
       click={click}
       setClick={setClick}

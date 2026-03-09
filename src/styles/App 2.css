@@ -19,3 +19,35 @@
         margin-right: 0%;
     }
 }
+
+header{
+    z-index: 2;
+}
+
+
+.dots:hover{
+    background: #acacac;
+}
+
+.dot{
+    padding: 4px;
+    border-radius: 8px;
+    width: 8px;
+    background: #111;
+}
+
+.parent-button{
+    padding: 4px;
+    font-family: inherit;
+    font-weight: 500;
+    border-radius: 2px;
+    border: none;
+    transition: all 0.3s ease;
+    background: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.parent-button:hover{
+    background: #525151;
+}
