@@ -56,7 +56,7 @@ header{
     background: #525151;
 }
 
-.Tabs-Page, .tab, .modal{
+.Tabs-Page, .tab, form,.modal{
     display: flex;
     flex-direction: column;
     align-items: center;

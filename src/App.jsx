@@ -12,6 +12,8 @@ import Weathero from './components/weathero'
 import Calc from './components/Calculator'
 import Abantuverse from './components/Abantu'
 import ShowNote from './components/note'
+import Login from './components/Login'
+import Create from './components/create'
 
 
 
@@ -25,6 +27,8 @@ export default function App(){
     content: null,
   })
 
+  const [currentUser, setCurrentUser] = useState(null)
+
   const [click, setClick] = useState('All')
   const [todo, setTodo] = useState('')
   const [openInput, setOpenInput] = useState(false)
@@ -34,6 +38,24 @@ export default function App(){
 
   const [openParent, setOPenParent] = useState(false)
   const [screen, setScreen] =useState('tabs')
+
+
+  /* LOGIN AUTH */
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [hide, setHide] = useState(false)
+
+
+    const [emailc, setEmailc] = useState('')
+  const [passwordc, setPasswordc] = useState('')
+  const [user, setUser] = useState('')
+  const [message, setMessage] = useState('')
+  const [isSignedIn, setIsSignedIn] = useState(false)
+
+
+  /* LOGIN AUTH */
+
 
   function openModal(content){
     setModal({
@@ -63,6 +85,7 @@ export default function App(){
         <>
           <Tabs 
           openModal={openModal}
+          isSignedIn={isSignedIn}
           setScreen={setScreen}/>
         </>
       )}
@@ -117,6 +140,48 @@ export default function App(){
       {screen === 'calc' &&(
         <>
         <Calc setScreen={setScreen} />
+        </>
+      )}
+
+      {screen === 'login' && (
+        <>
+        <Login
+        setEmail={setEmail}
+        setPassword={setPassword}
+        setHide={setHide}
+        email={email}
+        hide={hide}
+        setScreen={setScreen}
+        message={message}
+        openModal={openModal}
+        setMessage={setMessage}
+        setIsSignedIn={setIsSignedIn}
+        setCuurentUser={setCurrentUser}
+        password={password}
+        />
+        </>
+      )}
+
+
+            {screen === 'create' && (
+        <>
+    <Create
+  setEmailC={setEmailc}
+  setPasswordC={setPasswordc}
+  message={message}
+  setMessage={setMessage}
+  currentUser={currentUser}
+  user={user}
+  setUser={setUser}
+  setHide={setHide}
+  openModal={openModal}
+  setIsSignedIn={setIsSignedIn}
+  setCurrentUser={setCurrentUser}
+  emailC={emailc}
+  hide={hide}
+  passwordC={passwordc}
+  setScreen={setScreen}
+/>
         </>
       )}
     </div>

@@ -1,10 +1,15 @@
 const tabs = [
     {label: 'Tasker', icon: '✅', id: 'tasker'},
-    {label: 'Weathero', icon: '🌦️', id: 'weather'},
+    {label: 'W-0', icon: '🌦️', id: 'weather'},
     {label: 'Calculator', icon: '🧮', id: 'calc'},
     {label: 'Abantuverse', icon: '🦹🏽‍♀️', id: 'abantu'}
 ]
-export default function Tabs({setScreen, openModal}){
+
+const colors = {
+    background: '#111',
+    color: '#fff'
+}
+export default function Tabs({setScreen, isSignedIn,openModal}){
 
     function changeScreens(id){
         if(id === 'tasker')setScreen('tasker');
@@ -14,6 +19,10 @@ export default function Tabs({setScreen, openModal}){
     }
     return(
         <div className="Tabs-Page">
+            {!isSignedIn ? <div className="auth">
+                <button onClick={()=>setScreen('login')}>sign in</button>
+                <button onClick={()=>setScreen('create')} style={colors}>create account</button>
+            </div> : ''}
             <h1>Ingenious Engine</h1>
             <span>This is a gateway to Ingenious Apps</span>
             <div className="home-tabs">
