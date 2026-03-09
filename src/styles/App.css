@@ -14,13 +14,11 @@
 .context-menu button{
   background: none;
   border: none;
-  transition: all 0.3s ease;
+ 
   color: white;
   width: 100%;
   text-align: start;
   border-radius: 4px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  cursor: pointer;
   padding: 6px;
 }
 
@@ -32,26 +30,7 @@
 cursor: context-menu;
 }
 
-.open{
-    font-size: 3em;
-    width: 64px;
-    padding: 4px;
-    margin-left: 2%;
-    margin-bottom: 2%;
-    background: #111;
-    color: white;
-    border: none;
-    border-radius: 32px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
 
-.open:hover{
-    transform: rotate(45deg);
-}
 
 .left{
     display: flex;

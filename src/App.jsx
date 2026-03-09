@@ -1,4 +1,5 @@
 import './styles/App.css'
+import './styles/Modal.css'
 import './styles/App 2.css'
 import AppHeader from './components/App Header'
 import { useEffect, useState } from 'react'
@@ -6,6 +7,11 @@ import List from './components/List'
 import Input from './components/Input'
 import OpenInput from './components/Open Input'
 import ParentApp from './components/parent'
+import Tabs from './components/Tabs'
+import Weathero from './components/weathero'
+import Calc from './components/Calculator'
+import Abantuverse from './components/Abantu'
+import ShowNote from './components/note'
 
 
 
@@ -13,6 +19,10 @@ export default function App(){
   const [list, setList] = useState(() => {
     const saved = localStorage.getItem('list');
     return saved ? JSON.parse(saved) : []
+  })
+  const [modal, setModal] = useState({
+    visible: false,
+    content: null,
   })
 
   const [click, setClick] = useState('All')
@@ -23,11 +33,45 @@ export default function App(){
   }, [list])
 
   const [openParent, setOPenParent] = useState(false)
+  const [screen, setScreen] =useState('tabs')
+
+  function openModal(content){
+    setModal({
+      visible: true,
+      content: content
+    })
+  }
+
+  function closeModal(){
+    setModal({
+      visible: false,
+      content: null
+    })
+  }
+
+
   return(
     <div className="app">
 
-      <ParentApp
+       <ShowNote 
+          openModal={openModal}
+          closeModal={closeModal}
+          modal={modal}/>
+
+
+      {screen === 'tabs' &&(
+        <>
+          <Tabs 
+          openModal={openModal}
+          setScreen={setScreen}/>
+        </>
+      )}
+
+      {screen === 'tasker' &&(
+        <div className="App">
+          <ParentApp
       openParent={openParent}
+      setScreen={setScreen}
       setOPenParent={setOPenParent}
       />
       <AppHeader
@@ -55,6 +99,26 @@ export default function App(){
       openInput={openInput}
       setOpenInput={setOpenInput}
       />
+        </div>
+      )}
+
+      {screen === 'abantu' &&(
+        <>
+        <Abantuverse setScreen={setScreen} />
+        </>
+      )}
+
+      {screen === 'weather' &&(
+        <>
+        <Weathero setScreen={setScreen}/>
+        </>
+      )}
+
+      {screen === 'calc' &&(
+        <>
+        <Calc setScreen={setScreen} />
+        </>
+      )}
     </div>
   )
 }

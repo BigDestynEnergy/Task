@@ -32,9 +32,10 @@ const buttons = [
     { btn: 'Weathero', id: 'weather' },
     { btn: 'Calculator', id: 'calc' },
     { btn: 'Abantuverse', id: 'abantu' },
+    { btn: 'Exit', id: 'exit' }
 ];
 
-export default function ParentApp() {
+export default function ParentApp({setScreen}) {
     const [visible, setVisible] = useState(false);
     const menuRef = useRef(null);
     const dotsRef = useRef(null);
@@ -69,7 +70,10 @@ export default function ParentApp() {
         if(id==='calc'){alert('Calculator app under implementation')}
 
         if(id==='abantu'){alert('Comics app under implementation')}
-    
+
+        if(id === 'exit'){
+            setScreen('tabs')
+        }
     }
 
 

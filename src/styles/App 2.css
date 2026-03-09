@@ -38,16 +38,70 @@ header{
 
 .parent-button{
     padding: 4px;
-    font-family: inherit;
-    font-weight: 500;
     border-radius: 2px;
     border: none;
     transition: all 0.3s ease;
     background: #333;
     color: white;
-    cursor: pointer;
 }
 
 .parent-button:hover{
     background: #525151;
 }
+
+.Tabs-Page, .tab, .modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.home-tabs{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 4em;
+    padding: 32px;
+    justify-content: space-between;
+    animation: slide 0.3s ease forwards;
+}
+
+.tab{
+    background: #cacaca;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid #2b2b2b;
+}
+
+.tab:hover{
+    background: #acacac;
+}
+
+.icon{
+    font-size: 4em;
+}
+
+.open{
+    
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    background: #000;
+    transition: all 0.3s ease;
+    border: 2px solid #000;
+    border-radius: 50%;
+}
+
+.plus{
+        background: #fff;
+        font-size: 2em;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
