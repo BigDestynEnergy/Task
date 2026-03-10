@@ -1,15 +1,20 @@
+import task from '../assets/Images/task.png'
+import weather from '../assets/Images/weather.png'
+import superhero from '../assets/Images/Superhero.jpg'
+import abacus from '../assets/Images/Ab.png'
+
 const tabs = [
-    {label: 'Tasker', icon: '✅', id: 'tasker'},
-    {label: 'W-0', icon: '🌦️', id: 'weather'},
-    {label: 'Calculator', icon: '🧮', id: 'calc'},
-    {label: 'Abantuverse', icon: '🦹🏽‍♀️', id: 'abantu'}
+    {label: 'Tasker', icon: task, id: 'tasker'},
+    {label: 'W-0', icon: weather, id: 'weather'},
+    {label: 'Calculator', icon: abacus, id: 'calc'},
+    {label: 'Abantuverse', icon: superhero, id: 'abantu'}
 ]
 
 const colors = {
     background: '#111',
     color: '#fff'
 }
-export default function Tabs({setScreen, isSignedIn,openModal}){
+export default function Tabs({setScreen, owner,isSignedIn,openModal}){
 
     function changeScreens(id){
         if(id === 'tasker')setScreen('tasker');
@@ -22,7 +27,7 @@ export default function Tabs({setScreen, isSignedIn,openModal}){
             {!isSignedIn ? <div className="auth">
                 <button onClick={()=>setScreen('login')}>sign in</button>
                 <button onClick={()=>setScreen('create')} style={colors}>create account</button>
-            </div> : ''}
+            </div> : <span>{owner}</span>}
             <h1>Ingenious Engine</h1>
             <span>This is a gateway to Ingenious Apps</span>
             <div className="home-tabs">
@@ -32,7 +37,9 @@ export default function Tabs({setScreen, isSignedIn,openModal}){
                         <div className="tab"
                         onClick={()=>changeScreens(tab.id)}
                         key={tab.id}>
-                            <div className="icon">{tab.icon}</div>
+                            <img src={tab.icon} 
+                            width={140}
+                            className="icon" height={120}/>
                             <h3>{tab.label}</h3>
                         </div>
                     )

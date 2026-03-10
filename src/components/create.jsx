@@ -9,7 +9,7 @@ color: '#1db954'
 
 
 
-export default function Create( {setCurrentUser, openModal,setIsSignedIn,hide, emailC,setScreen,passwordC, setEmailC, setPasswordC, setHide, user, setUser, message, setMessage} ){
+export default function Create( {setOwner,openModal,setIsSignedIn,hide, emailC,setScreen,passwordC, setEmailC, setPasswordC, setHide, user, setUser, message, setMessage} ){
 
          function showMsg(text){
         setMessage(text);
@@ -40,7 +40,9 @@ function passwordVerification(){
 }
 
   function handleCreate(){
-    if(!user.trim()) showMsg('Enter your full name')
+    if(!user.trim()){
+        showMsg('Enter your name');
+         return}
 
     else if(/\d/.test(user)) showMsg('Name cannot contain numbers')
 
@@ -51,10 +53,7 @@ function passwordVerification(){
     else if(!passwordVerification()) return
 
     else{
-        setCurrentUser({
-            name: user,
-            email: emailC
-        })
+        setOwner(user)
         setUser('')
         setEmailC('')
         setPasswordC('')
@@ -81,10 +80,10 @@ function passwordVerification(){
             <input type="email" value={emailC} placeholder="Enter your email" onChange={(e)=>{setEmailC(e.target.value)}} />
              <input type={hide ? 'text' : 'password'} value={passwordC} placeholder="Enter your password" onChange={(e)=>{setPasswordC(e.target.value)}} />
              <div className="show">
-                <input type="checkbox" onClick={()=>{setHide(!hide)}}/>
+                <input type="checkbox" onClick={()=>{setHide(prev => !prev)}}/>
                 <span>{hide ? 'Hide Password' : 'Show Password'}</span>
              </div>
-             <button>log in</button>
+             <button>create account</button>
              <hr />
              <div>Already have an account? <i onClick={()=>setScreen('login')}>log in</i> instead</div>
         </form>

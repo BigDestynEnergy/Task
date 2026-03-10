@@ -92,7 +92,6 @@ header{
 }
 
 .open{
-    
     position: absolute;
     left: 0;
     bottom: 0;
@@ -102,12 +101,15 @@ header{
     background: #000;
     transition: all 0.3s ease;
     border: 2px solid #000;
-    border-radius: 50%;
+    border-radius: 24px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .plus{
         background: #fff;
-        font-size: 2em;
+        height: 40px;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }

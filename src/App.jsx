@@ -27,7 +27,7 @@ export default function App(){
     content: null,
   })
 
-  const [currentUser, setCurrentUser] = useState(null)
+
 
   const [click, setClick] = useState('All')
   const [todo, setTodo] = useState('')
@@ -45,6 +45,7 @@ export default function App(){
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [hide, setHide] = useState(false)
+  const [owner, setOwner]= useState(null)
 
 
     const [emailc, setEmailc] = useState('')
@@ -86,6 +87,8 @@ export default function App(){
           <Tabs 
           openModal={openModal}
           isSignedIn={isSignedIn}
+
+          owner={owner}
           setScreen={setScreen}/>
         </>
       )}
@@ -156,7 +159,7 @@ export default function App(){
         openModal={openModal}
         setMessage={setMessage}
         setIsSignedIn={setIsSignedIn}
-        setCuurentUser={setCurrentUser}
+        setOwner={setOwner}
         password={password}
         />
         </>
@@ -165,22 +168,21 @@ export default function App(){
 
             {screen === 'create' && (
         <>
-    <Create
+<Create
   setEmailC={setEmailc}
   setPasswordC={setPasswordc}
   message={message}
   setMessage={setMessage}
-  currentUser={currentUser}
-  user={user}
-  setUser={setUser}
+  setOwner={setOwner}
   setHide={setHide}
   openModal={openModal}
   setIsSignedIn={setIsSignedIn}
-  setCurrentUser={setCurrentUser}
   emailC={emailc}
   hide={hide}
   passwordC={passwordc}
   setScreen={setScreen}
+  user={user}
+  setUser={setUser}
 />
         </>
       )}

@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-
+import menu from '../assets/Images/menu.svg'
 const dotsStyle = {
     zIndex: 20,
     display: 'grid',
@@ -7,7 +7,6 @@ const dotsStyle = {
     gridTemplateColumns: 'repeat(2, 1fr)',
     justifyContent: 'center',
     alignItems: 'center',
-    border: '2px solid #111',
     gap: '4px',
     borderRadius: '8px',
     transition: 'all 0.3s ease',
@@ -18,13 +17,6 @@ const dotsStyle = {
     top: '10px',
     left: '10px',
     background: 'transparent',
-};
-
-const dotStyle = {
-    width: '10px',
-    height: '10px',
-    backgroundColor: '#111',
-    borderRadius: '50%',
 };
 
 const buttons = [
@@ -79,33 +71,18 @@ export default function ParentApp({setScreen}) {
 
     return (
         <div>
-            <div ref={dotsRef} style={dotsStyle} onClick={() => setVisible(!visible)}>
+            
+            <div ref={dotsRef} 
+            style={dotsStyle} onClick={() => setVisible(!visible)}>
                 <div style={{ display: 'contents' }}>
-                    <div style={dotStyle}></div>
-                    <div style={dotStyle}></div>
-                    <div style={dotStyle}></div>
-                    <div style={dotStyle}></div>
+                    <img src={menu} height={40} className="menu"/>
                 </div>
             </div>
 
             {visible && (
                 <nav
                     ref={menuRef}
-                    style={{
-                        position: 'absolute',
-                        top: '50px',
-                        left: '10px',
-                        color: '#fff',
-                        background: '#111',
-                        border: '1px solid #111',
-                        borderRadius: '8px',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        padding: '8px',
-                        boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
-                        zIndex: 25,
-                        minWidth: '150px',
-                    }}
+                    className="nav"
                 >
                     <h2 style={{ fontSize: '1rem', marginBottom: '8px' }}>
                         Visit Other Ingenious Apps

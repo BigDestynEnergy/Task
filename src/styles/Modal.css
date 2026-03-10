@@ -85,7 +85,7 @@ form{
     padding: 24px;
 }
 
-input[type="email"],input[type="text"],input[type="password"]{
+form input[type="email"],form input[type="text"],form input[type="password"]{
     padding: 8px;
     border: 2px solid transparent;
     border-radius: 8px;

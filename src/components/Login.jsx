@@ -6,7 +6,7 @@ width: '300px',
 color: '#1db954'
 }
 
-export default function Login( {hide, openModal,setIsSignedIn, setCuurentUser,setScreen,email, message, setMessage, password, setEmail, setPassword, setHide} ){
+export default function Login( {hide, setOwner,openModal,setIsSignedIn,setScreen,email, message, setMessage, password, setEmail, setPassword, setHide} ){
    
      function showMsg(text){
         setMessage(text);
@@ -21,9 +21,7 @@ export default function Login( {hide, openModal,setIsSignedIn, setCuurentUser,se
         else if(password.length < 8)showMsg('Password must include at least 8 characters');
         else(
              openModal(`Welcome to Ingenious ${email}`),
-            setCuurentUser({
-                name: email,
-            }),
+            setOwner(email),
             showMsg('Login successful. Please wait...'),
            
             setTimeout(()=>{

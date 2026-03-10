@@ -1,3 +1,5 @@
+import add from '../assets/Images/add.svg'
+
 const active = {transform: 'rotate(45deg)'}
 const deactive = {transform: 'rotate(0deg)'}
 export default function OpenInput({setOpenInput, openInput}){
@@ -8,7 +10,7 @@ export default function OpenInput({setOpenInput, openInput}){
         style={openInput ? active : deactive}
         onClick={()=>setOpenInput(!openInput)}
         className="open">
-            <span className="plus">➕</span>
+            <img src={add} className="plus" />
         </div>
     )
 }
