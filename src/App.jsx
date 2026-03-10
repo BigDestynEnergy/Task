@@ -1,6 +1,7 @@
 import './styles/App.css'
 import './styles/Modal.css'
 import './styles/App 2.css'
+import './styles/calc.css'
 import AppHeader from './components/App Header'
 import { useEffect, useState } from 'react'
 import List from './components/List'
@@ -38,6 +39,13 @@ export default function App(){
 
   const [openParent, setOPenParent] = useState(false)
   const [screen, setScreen] =useState('tabs')
+
+  /** calculator states bruv */
+    const [display, setDisplay] = useState("");
+  const [firstNumber, setFirstNumber] = useState(null);
+  const [operator, setOperator] = useState(null);
+
+  /** sigh */
 
 
   /* LOGIN AUTH */
@@ -141,7 +149,14 @@ export default function App(){
 
       {screen === 'calc' &&(
         <>
-        <Calc setScreen={setScreen} />
+        <Calc setScreen={setScreen} 
+        display={display}
+        setDisplay={setDisplay}
+        firstNumber={firstNumber}
+        setFirstNumber={setFirstNumber}
+        operator={operator}
+        setOperator={setOperator}
+        />
         </>
       )}
 
