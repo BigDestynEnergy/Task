@@ -17,10 +17,14 @@ const colors = {
 export default function Tabs({setScreen, owner,isSignedIn,openModal}){
 
     function changeScreens(id){
+        if(isSignedIn){
         if(id === 'tasker')setScreen('tasker');
         if(id === 'weather')openModal('This app is still under development');
         if(id === 'calc')openModal('This Calculator app is still under development');
         if(id === 'abantu')openModal('This comics app is still under development');
+    } else{
+        openModal('You are not signed in. Sign in to continue')
+    }
     }
     return(
         <div className="Tabs-Page">

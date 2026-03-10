@@ -87,7 +87,6 @@ export default function App(){
           <Tabs 
           openModal={openModal}
           isSignedIn={isSignedIn}
-
           owner={owner}
           setScreen={setScreen}/>
         </>
