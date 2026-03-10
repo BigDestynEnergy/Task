@@ -1,5 +1,5 @@
 import task from '../assets/Images/task.png'
-import weather from '../assets/Images/weather.png'
+import weather from '../assets/Images/Weather.png'
 import superhero from '../assets/Images/Superhero.jpg'
 import abacus from '../assets/Images/Ab.png'
 
